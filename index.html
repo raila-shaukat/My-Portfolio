@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Raila Shaukat — Web Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6f5fb;--surface:#fff;--text:#16151f;--muted:#615f72;--line:#e3e1ee;--accent:#6d4aff;--chip:#ece8ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f0e17;--surface:#181725;--text:#f1f0f8;--muted:#a3a1b8;--line:#2a2940;--accent:#a592ff;--chip:#25214a}}
+:root[data-theme="dark"]{--bg:#0f0e17;--surface:#181725;--text:#f1f0f8;--muted:#a3a1b8;--line:#2a2940;--accent:#a592ff;--chip:#25214a}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,.disp{font-family:'Space Grotesk','Segoe UI',system-ui,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:54px;gap:14px}
+nav b{font-family:'Space Grotesk',sans-serif}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;overflow-x:auto}
+nav li a{font-size:.9rem;color:var(--muted);white-space:nowrap}
+nav li a:hover{color:var(--accent)}
+.hero{background:linear-gradient(135deg,#2b1a7a 0%,#5a35e8 55%,#0ea5a4 130%);color:#fff;padding:84px 0 70px}
+.eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;opacity:.85}
+.hero h1{font-size:clamp(2.8rem,9vw,5.6rem);line-height:1;margin:14px 0 14px;letter-spacing:-.02em}
+.hero .role{font-size:clamp(1.05rem,2.6vw,1.4rem);max-width:640px;opacity:.95;margin:0}
+.contact{margin-top:26px;display:flex;flex-wrap:wrap;gap:6px 26px;font-size:1.02rem;font-weight:500}
+.contact span{opacity:.75;margin-right:6px}
+.cta{display:inline-block;margin-top:30px;background:#fff;color:#2b1a7a;padding:12px 26px;border-radius:99px;font-weight:600}
+section{padding:70px 0}
+.label{color:var(--accent);font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.15;margin:8px 0 34px;letter-spacing:-.01em}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
+.about p{margin:0 0 14px;color:var(--muted);font-size:1.05rem}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start}
+.fact{border-left:3px solid var(--accent);padding:2px 0 2px 14px}
+.fact b{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.5rem}
+.fact span{color:var(--muted);font-size:.88rem}
+.proj{display:grid;grid-template-columns:90px 1fr;gap:10px 24px;padding:34px 0;border-top:1px solid var(--line)}
+.proj:last-child{border-bottom:1px solid var(--line)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:3.2rem;font-weight:700;line-height:1;color:var(--accent);opacity:.9}
+.proj h3{font-size:1.6rem;margin:0}
+.type{color:var(--muted);font-size:.92rem;margin:2px 0 12px}
+.proj p{margin:0 0 14px;color:var(--muted);max-width:680px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{background:var(--chip);color:var(--accent);font-size:.8rem;font-weight:600;padding:4px 12px;border-radius:99px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px}
+.sk{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+.sk h3{margin:0 0 12px;font-size:1.05rem}
+.tl{border-left:2px solid var(--line);margin-left:6px}
+.ev{position:relative;padding:0 0 30px 28px}
+.ev:before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.ev h3{margin:0;font-size:1.15rem}
+.ev .m{color:var(--muted);font-size:.9rem}
+.ev p{margin:6px 0 0;color:var(--muted);max-width:640px}
+footer{background:var(--surface);border-top:1px solid var(--line);padding:50px 0;text-align:center}
+footer h2{margin:0 0 10px}
+footer p{margin:4px 0;color:var(--muted)}
+footer .big{font-size:1.15rem;color:var(--text);font-weight:500}
+@media(max-width:720px){.about{grid-template-columns:1fr}.proj{grid-template-columns:1fr}.num{font-size:2.2rem}nav ul{gap:14px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Raila Shaukat</b>
+<ul><li><a href="#about">About</a></li><li><a href="#work">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#journey">Journey</a></li></ul></div></nav>
+
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Web Developer · Open to Internships</div>
+<h1>Raila Shaukat</h1>
+<p class="role">I design and build responsive, user-friendly websites and full-stack web apps with HTML, CSS, JavaScript and Node.js.</p>
+<div class="contact">
+<div><span>Email</span>raila.shaukat@gmail.com</div>
+<div><span>Phone</span>+92 330 0077718</div>
+<div><span>Location</span>Rawalpindi, Pakistan</div>
+</div>
+<a class="cta" href="#work">See my work ↓</a>
+</div></header>
+
+<section id="about"><div class="wrap">
+<div class="label">About</div><h2>Turning ideas into working web apps.</h2>
+<div class="about">
+<div>
+<p>I am a motivated, detail-oriented BS Information Technology student at International Islamic University, Islamabad.</p>
+<p>I enjoy building complete products, from a clean, mobile-friendly interface to a Node.js and Express backend connected to a database. I am looking for an internship where I can apply my skills, learn from experienced developers and contribute to real projects.</p>
+</div>
+<div class="facts">
+<div class="fact"><b>3.54</b><span>CGPA out of 4.0</span></div>
+<div class="fact"><b>3</b><span>Projects built</span></div>
+<div class="fact"><b>2 mo</b><span>Frontend internship</span></div>
+<div class="fact"><b>1</b><span>Web dev certification</span></div>
+</div>
+</div></div></section>
+
+<section id="work" style="padding-top:10px"><div class="wrap">
+<div class="label">Selected Work</div><h2>Projects</h2>
+
+<div class="proj"><div class="num">01</div><div>
+<h3>Pizzeria</h3><div class="type">Fast food ordering website · Full-stack</div>
+<p>A responsive ordering website with user authentication and an interactive menu. The Node.js and Express backend, with MongoDB, manages users, orders and menu data, and the mobile-friendly design uses Bootstrap and custom CSS.</p>
+<div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Bootstrap</span><span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">MongoDB</span></div></div></div>
+
+<div class="proj"><div class="num">02</div><div>
+<h3>Foodies</h3><div class="type">Food ordering platform · Full-stack</div>
+<p>A full-stack platform with menu browsing, cart management and order placement. I developed REST APIs with Node.js and Express.js, integrated MongoDB, and created a responsive, interactive interface.</p>
+<div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">MongoDB</span></div></div></div>
+
+<div class="proj"><div class="num">03</div><div>
+<h3>Exam Management System</h3><div class="type">Desktop application · Java</div>
+<p>A desktop system with CRUD operations for students and exams, secure user authentication through a MySQL database, exam creation, result management and database connectivity.</p>
+<div class="chips"><span class="chip">Java</span><span class="chip">Java GUI</span><span class="chip">MySQL</span></div></div></div>
+</div></section>
+
+<section id="skills" style="padding-top:10px"><div class="wrap">
+<div class="label">Toolbox</div><h2>Skills</h2>
+<div class="skills">
+<div class="sk"><h3>Web</h3><div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">Bootstrap</span><span class="chip">Node.js</span></div></div>
+<div class="sk"><h3>Programming</h3><div class="chips"><span class="chip">C++</span><span class="chip">Java</span></div></div>
+<div class="sk"><h3>Database</h3><div class="chips"><span class="chip">MySQL</span><span class="chip">SQL Queries</span><span class="chip">MongoDB</span></div></div>
+<div class="sk"><h3>Tools</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">MySQL Workbench</span><span class="chip">Cisco</span><span class="chip">Kali Linux</span></div></div>
+</div></div></section>
+
+<section id="journey" style="padding-top:10px"><div class="wrap">
+<div class="label">Journey</div><h2>Experience &amp; Education</h2>
+<div class="tl">
+<div class="ev"><h3>Frontend Web Development Intern</h3><div class="m">Reverse 4K (BIC IIUI) · 2 months</div></div>
+<div class="ev"><h3>Certified Web Development Course</h3><div class="m">Achievement</div><p>Hands-on experience with HTML5, CSS3, JavaScript and responsive design.</p></div>
+<div class="ev"><h3>BS (Hons) Information Technology</h3><div class="m">International Islamic University, Islamabad · In progress · 3.54/4.0</div><p>Programming Fundamentals, OOP, Data Structures &amp; Algorithms (C++), Computer Networks, Advanced Computer Programming (Java), Database Administration and Management, Operating Systems.</p></div>
+<div class="ev"><h3>F.Sc (Pre-Medical) · 86.5%</h3><div class="m">F.G Degree College for Women, Rawalpindi</div></div>
+<div class="ev"><h3>Matric (Science) · 88%</h3><div class="m">Progressive Model School, Rawalpindi</div></div>
+</div></div></section>
+
+<footer><div class="wrap">
+<h2>Let's work together</h2>
+<p class="big">raila.shaukat@gmail.com · +92 330 0077718</p>
+<p>Rawalpindi, Pakistan · © Raila Shaukat</p>
+</div></footer>
+</body>
+</html>
